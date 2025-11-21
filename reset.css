@@ -52,4 +52,12 @@ img{
     max-width: 100%;
     height: auto;
 }
+a{
+	text-decoration: none;
+}
+button{
+	cursor: pointer;
+    border: 0;
+    background-color: #fff;
+}
 
