@@ -1,15 +1,14 @@
-body, button, div{
-    font-family: "Gudea", "Heiti", "微軟正黑體", "Microsoft JhengHei";
-}
-
 body{
+    font-family: "Gudea", "Heiti", "微軟正黑體", "Microsoft JhengHei";
     max-width: 1100px;
     margin: 0 auto;
 }
 section{
     margin-top: 80px;
 }
-
+a{
+    transition: color .45s;
+}
 h2{
     width: 260px;
     font-size: 30px;
@@ -18,11 +17,24 @@ h2{
     color: #222;
     position: relative;
 }
+h2::before{
+    content: "";
+    border-width: 18px 18px 0 0;
+    border-color: #11d073 transparent transparent;
+    position: absolute;
+    left: -10px;
+    top: 0;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    border-style: solid;
+}
 
 h3{
     font-size: 20px;
     font-weight: 700;
     color: white;
+    transition: color .45s;
 }
 .fs-18{
     font-size: 18px;
@@ -33,20 +45,12 @@ h3{
 h4{
     font-size: 20px;
     font-weight: 700;
-    margin-bottom: 10px;
 }
-
 span{
     color: rgb(250, 182, 23);
     font-size: 18px;
     font-weight: 700;
     padding-right: 4px;
-}
-
-.trig{
-    border-style: solid;
-    border-width: 4px 0 0 0;
-    border-color: #11d073 transparent transparent transparent;
 }
 
 img{
@@ -55,8 +59,64 @@ img{
     border-radius: 10px;
     object-fit: cover;
 }
+
+/* 重複利用 */
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+.gap-15{
+    gap: 15px;
+}
+.gap-20{
+    gap: 20px;
+}
+.h-100{
+    height: 100%;
+}
+.mb-10{
+    margin-bottom: 10px;
+}
+.mb-20{
+    margin-bottom: 20px;
+}
+
+/* grid */
+.grid-row-3{
+    grid-row: span 3;
+}
+.grid-row-2{
+    grid-row: span 2;
+}
+.grid-row-1{
+    grid-row: span 1;
+}
+.grid-col-2{
+    grid-column: span 2;
+}
+
+.title{
+    font-size: 14px;
+    font-weight: 700;
+    color: #222;
+}
+.price{
+    font-size: 14px;
+    text-align: end;
+}
+
+/* img卡片*/
 .img-link{
     position: relative;
+    border-radius: 10px;
+    transition: box-shadow .45s;
+}
+.img-link:hover{
+    box-shadow: 0 0 12px 2px rgba(0, 0, 0, .15);
 }
 .img-info{
     padding: 10px;
@@ -81,11 +141,6 @@ img{
     flex-direction: row;
     justify-content: space-between;
 }
-.price{
-    font-size: 14px;
-    text-align: end;
-}
-
 
 /* nav */
 .nav{
@@ -111,49 +166,6 @@ img{
     font-weight: 700;
 }
 
-/* 共用 */
-.d-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 20px;
-}
-.flex-column{
-    display: flex;
-    flex-direction: column;
-}
-.flex-row{
-    display: flex;
-    flex-direction: row;
-}
-.gap-10{
-    gap: 10px;
-}
-.gap-15{
-    gap: 15px;
-}
-.gap-20{
-    gap: 20px;
-}
-.w-100{
-    width: 100%;
-}
-.h-100{
-    height: 100%;
-}
-.mb-10{
-    margin-bottom: 10px;
-}
-.mb-20{
-    margin-bottom: 20px;
-}
-
-.title{
-    font-size: 14px;
-    font-weight: 700;
-    color: #222;
-}
-
 /* 焦點 */
 .focus-h2::before{
     content: "";
@@ -169,68 +181,58 @@ img{
 }
 .focus{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
 }
 .focus-plan{
-    height: 100%;
     grid-column: span 2;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 105px);
     gap: 15px;
 }
-.grid-row-3{
-    grid-row: span 3;
-}
-.grid-row-2{
-    grid-row: span 2;
-}
-.grid-row-1{
-    grid-row: span 1;
-}
-
 .focus-card{
-    width: 100%;
-    height: 100%;
     background-color: rgb(250, 250, 250);
     border-radius: 10px;
     display: flex;
     flex-direction: row;
+    transition: box-shadow .45s;
 }
 .focus-card-body{
-    width: calc(100% - 110px);
+    width: calc(100% - 138px);
     padding: 10px;
 }
-.focus-card-body h3{
+.focus-card h3{
     font-size: 14px;
     font-weight: 700;
     color: #222;
 }
 .focus-card-img{
-    width: 115px;
+    width: 118px;
     height: 75px;
     float: right;
     object-fit: cover;
     border-radius: 0 10px 10px 0;
 }
-
-.focus-card:hover{
+.focus-card:hover h3{
     color: #0c9251;
 }
-
-/* 日本 */
-.jpn{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+.focus-card:hover{
+    box-shadow: 0 0 12px 4px rgba(0, 0, 0, .1);
 }
 
-/* 台灣 */
-.tw-grid{
+/* 日本 & 台灣 */
+.plan-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+}
+.tw-title-grid{
     display: grid;
     grid-template-columns: 1fr 3fr;
     gap: 20px;
+    margin-bottom: 20px;
 }
 .hint{
     display: flex;
@@ -247,7 +249,7 @@ img{
     margin-bottom: 10px;
 }
 .tag a{
-    font-size: 14;
+    font-size: 14px;
     font-weight: 400;
     text-wrap: nowrap;
     color: #222;
@@ -257,15 +259,22 @@ img{
 }
 .tw-plan{
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 20px;
 }
 
 .card{
-    height: 100%;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    transition: box-shadow .45s;
+}
+.card:hover h3{
+    color: #0c9251;
+}
+.card:hover{
+    box-shadow: 0 0 12px 4px rgba(0, 0, 0, .1);
 }
 .card-img{
     border-radius: 10px 10px 0 0;
@@ -279,16 +288,6 @@ img{
     background-color: rgb(250, 250, 250);
     border-radius: 0 0 10px 10px;
 }
-
-h2::before{
-    content: "";
-    border-width: 18px 18px 0 0;
-    border-color: #11d073 transparent transparent;
-    position: absolute;
-    left: -10px;
-    z-index: -1;
-    top: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
+.card-price{
+    color: #ff8b00;
 }
