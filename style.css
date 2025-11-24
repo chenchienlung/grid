@@ -71,14 +71,21 @@ img{
 .gap-20{
     gap: 20px;
 }
-.h-100{
-    height: 100%;
-}
 .mb-10{
     margin-bottom: 10px;
 }
 .mb-20{
     margin-bottom: 20px;
+}
+
+.title{
+    font-size: 14px;
+    font-weight: 700;
+    color: #222;
+}
+.price{
+    font-size: 14px;
+    text-align: end;
 }
 
 /* grid */
@@ -95,18 +102,9 @@ img{
     grid-column: span 2;
 }
 
-.title{
-    font-size: 14px;
-    font-weight: 700;
-    color: #222;
-}
-.price{
-    font-size: 14px;
-    text-align: end;
-}
-
 /* img卡片*/
 .img-link{
+    height: 100%;
     position: relative;
     border-radius: 10px;
     transition: box-shadow .45s;
@@ -147,7 +145,7 @@ img{
 }
 .nav-item{
     padding: 0 5px;
-    border-bottom: 3px solid transparent;
+    margin-bottom: 8px;
     font-size: 18px;
     color: #222;
 }
