@@ -9,6 +9,9 @@ section{
 a{
     transition: color .45s;
 }
+button{
+    text-wrap: nowrap;
+}
 h2{
     width: 260px;
     font-size: 30px;
@@ -200,6 +203,7 @@ img{
 .focus-card h3{
     font-size: 14px;
     font-weight: 700;
+    line-height: 19px;
     color: #222;
 }
 .focus-card-img{
