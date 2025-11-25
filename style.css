@@ -279,3 +279,25 @@ img{
 .card-price{
     color: #ff8b00;
 }
+
+/* 更多主打星 */
+.more{
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(34, 34, 34);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    margin-bottom: 80px;
+}
+.more svg{
+    margin-left: 10px;
+    border-radius: 100%;
+    background-color: rgb(17, 208, 115);
+    fill: white;
+    transition: background-color .45s;
+}
+.more:hover svg{
+    background-color: rgb(12, 146, 81);
+}
