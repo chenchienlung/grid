@@ -50,7 +50,7 @@ span{
     color: rgb(250, 182, 23);
     font-size: 18px;
     font-weight: 700;
-    padding-right: 4px;
+    margin-right: 5px;
 }
 
 img{
@@ -85,7 +85,8 @@ img{
 }
 .price{
     font-size: 14px;
-    text-align: end;
+    font-weight: 400;
+    text-align: right;
 }
 
 /* grid */
